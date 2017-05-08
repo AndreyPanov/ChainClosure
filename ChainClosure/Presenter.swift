@@ -15,11 +15,7 @@ class Presenter {
       .before({ [weak self] in self?.view?.hideLoadingIndicator() })
       .getItem(
         onSuccess: { title in print(title) },
-        onError: { error in print(error.localizedDescription) })
-      .after({ [weak self] in self?.action() })
-  }
-  
-  func action() {
-    //some logic after request
+        onError: { error in print(error.localizedDescription) }
+    )
   }
 }
